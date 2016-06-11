@@ -1,0 +1,27 @@
+{
+  "name": "gearbot",
+  "version": "1.0.0",
+  "description": "Slackbot written in Node",
+  "author":"@drhelius",
+  "scripts": {
+    "start": "node gearbot.js"
+  },
+  "main": "gearbot.js",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/drhelius/gearbot"
+},
+  "bugs": {
+  "url": "https://github.com/drhelius/gearbot/issues"
+},
+  "keywords": [
+  "bots",
+  "chatbots",
+  "slack"
+],
+  "dependencies": {
+    "botkit": "0.2.0",
+    "chance": "1.0.3"
+  },
+  "license": "GPL-3.0"
+}
