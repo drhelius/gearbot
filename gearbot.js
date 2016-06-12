@@ -173,7 +173,7 @@ controller.hears(['bye', 'ciao', 'adios', 'sta lueg', 'talue'],'direct_message,d
 
 });
 
-controller.hears([':joy:', ':laughing:', 'jaja'],'ambient',function(bot, message) {
+controller.hears([':joy:', ':laughing:', 'jaja', '/giphy'],'ambient',function(bot, message) {
 
     if (chance.bool({likelihood: 25}))
     {
