@@ -23,25 +23,32 @@ module.exports = {
 
                 console.log('aaaa ' + body['response']['docs'].lenght);
 
-                if (Object.keys(body['response']['docs']).length > 10) {
+                var num_entries = Object.keys(body['response']['docs']).length;
+
+                if (num_entries > 10) {
                     ret = 'Te muestro las 10 primeras entradas:\n';
-                } else {
+                } else if (num_entries > 0) {
                     ret = 'Esto es lo que he encontrado:\n';
+                } else {
+                    ret = 'Pues no he encontrado nada de nada... :thinking_face:';
                 }
 
-                var i = 0;
+                if (num_entries > 0) {
+                    var i = 0;
 
-                for(var myKey in body['response']['docs']) {
-                   if (i >= 10){
-                       break;
-                   }
+                    for(var myKey in body['response']['docs']) {
+                       if (i >= 10){
+                           break;
+                       }
 
-                   ret += (':small_blue_diamond:' + body['response']['docs'][myKey]['id'] + ':' + body['response']['docs'][myKey]['latestVersion'] + '\n');
+                       ret += (':small_blue_diamond:' + body['response']['docs'][myKey]['id'] + ':' + body['response']['docs'][myKey]['latestVersion'] + '\n');
 
-                   i++;
+                       i++;
+                    }
                 }
 
                 callback(ret);
+
             } else {
 
                 callback('ko');
