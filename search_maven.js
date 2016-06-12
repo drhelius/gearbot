@@ -20,9 +20,6 @@ module.exports = {
             if (!error && response.statusCode == 200) {
 
                 var ret = ''
-
-                console.log('aaaa ' + body['response']['docs'].lenght);
-
                 var num_entries = Object.keys(body['response']['docs']).length;
 
                 if (num_entries > 10) {
