@@ -201,14 +201,14 @@ controller.middleware.receive.use(function(bot, message, next) {
             message.original_text = message.text;
 
             message.text = message.text.toLowerCase();
-            message.text = message.text.replace('/[àáâãäå]/g','a');
-            message.text = message.text.replace('/[èéêë]/g','e');
-            message.text = message.text.replace('/[ìíîï]/g)','i');
-            message.text = message.text.replace('/[òóôõö]/g)','o');
-            message.text = message.text.replace('/[ùúûü]/g','u');
-            message.text = message.text.replace('"','##');
-            message.text = message.text.replace('“','##');
-            message.text = message.text.replace('”','##');
+            message.text = message.text.replace(/[àáâãäå]/g,'a');
+            message.text = message.text.replace(/[èéêë]/g,'e');
+            message.text = message.text.replace(/[ìíîï]/g,'i');
+            message.text = message.text.replace(/[òóôõö]/g,'o');
+            message.text = message.text.replace(/[ùúûü]/g,'u');
+            message.text = message.text.replace(/"/g,'##');
+            message.text = message.text.replace(/“/g,'##');
+            message.text = message.text.replace(/”/g,'##');
 
             if (message.subtype == 'channel_join') {
 
