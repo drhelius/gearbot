@@ -191,6 +191,24 @@ controller.hears(['eres.*(simpatic.*|bueno|grande|caña|listo|guapo|maquina|mejo
 
 });
 
+controller.hears(['bienvenido'],'direct_message,direct_mention,mention',function(bot, message) {
+
+    bot.reply(message, {text: 'happy', reply_to_user: message.user});
+
+});
+
+controller.hears(['turbo boost'],'direct_message,direct_mention,mention',function(bot, message) {
+
+    bot.reply(message, {text: '/giphy turbo boost', reply_to_user: message.user});
+
+});
+
+controller.hears(['arranca', 'michael', 'acelera', 'frena'],'direct_message,direct_mention,mention',function(bot, message) {
+
+    bot.reply(message, {text: '/giphy knight rider', reply_to_user: message.user});
+
+});
+
 controller.hears(['eres.*(peor|bobo|idiot.*|cabro.*|gilip.*|cansino|pesad.*|capull.*|estupid.*|imbec.*)', '(peor|bobo|idiot.*|cabro.*|gilip.*|cansino|pesad.*|capull.*|estupid.*|imbec.*).*eres'],'direct_message,direct_mention,mention',function(bot, message) {
 
     bot.reply(message, {text: 'angry', reply_to_user: message.user});
