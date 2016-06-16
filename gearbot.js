@@ -8,12 +8,16 @@
 if (!process.env.token) {
     console.log('Error: Specify token in environment');
     process.exit(1);
+} else if (!process.env.jenkins) {
+    console.log('Error: Specify jenkins URL connection in environment');
+    process.exit(1);
 }
 
 var Chance = require('chance');
 var Botkit = require('botkit');
 var phrases = require('./phrases.js')
 var search_maven = require('./search_maven.js')
+var jenkins = require('./jenkins.js');
 var os = require('os');
 
 var chance = new Chance();
